@@ -34,32 +34,41 @@
             margin-bottom:15px;
         }
 
-        /* ⭐ Enhanced Mission Box */
-        .mission-box {
-            background: linear-gradient(135deg, #e8f5e9, #ffffff);
-            padding: 28px;
-            border-radius: 14px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-            margin-bottom: 40px;
-            text-align: center;
-            font-size: 19px;
-            line-height: 1.7;
-            border-left: 6px solid #4caf50;
+        /* ⭐ Mission Section Styling */
+        .mission-wrapper {
             position: relative;
+            margin-bottom: 60px;
         }
 
-        .mission-box::before {
-            content: "🌿";
-            font-size: 40px;
-            position: absolute;
-            top: -18px;
-            left: 50%;
-            transform: translateX(-50%);
+        .mission-box {
+            background:white;
+            padding:30px 25px;
+            border-radius:15px;
+            box-shadow:0 4px 12px rgba(0,0,0,0.12);
+            text-align:center;
+            font-size:18px;
+            line-height:1.7;
+            border-left:6px solid #4caf50;
+        }
+
+        .mission-icon {
+            width: 70px;
+            height: 70px;
             background: white;
             border-radius: 50%;
-            padding: 5px 10px;
-            color: #2e7d32;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            position: absolute;
+            top: -55px;   /* FIXED: moved up so it does not hide text */
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mission-icon img {
+            width: 45px;
+            height: 45px;
         }
 
         /* Product Grid */
@@ -85,17 +94,16 @@
             overflow: hidden;
         }
 
-        /* Base image — always visible */
         .image-box img.base {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        /* Pouch image — fades in/out */
         .image-box img.top {
             position: absolute;
-            top: 0; left: 0;
+            top: 0; 
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -156,12 +164,21 @@
     <!-- ⭐ Mission Section -->
     <h2 class="section-title">Our Mission</h2>
 
-    <div class="mission-box">
-        At <strong>Metabolic Boost</strong>, our mission is to bring you pure, natural, 
-        and genuinely healthy products made with honesty, care, and traditional recipes.
-        <br><br>
-        We are dedicated to helping individuals live healthier lives through 
-        clean, chemical-free, handcrafted blends that nourish the mind and body.
+    <div class="mission-wrapper">
+
+        <!-- Circle Icon -->
+        <div class="mission-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/2907/2907815.png">
+        </div>
+
+        <!-- Mission Text -->
+        <div class="mission-box">
+            At <strong>Metabolic Boost</strong>, our mission is to bring you pure, natural and genuinely healthy products 
+            made with honesty, care, and traditional recipes.  
+            <br><br>
+            We are dedicated to helping individuals live healthier lives through clean, chemical-free, handcrafted blends 
+            that nourish the mind and body.
+        </div>
     </div>
 
     <h2 class="section-title">Our Products</h2>
@@ -232,7 +249,6 @@
     Address: Plot No 288 Jagannath Swami Chowk, Ghass Bazar, Rampeth, Nagpur 440008
 </footer>
 
-<!-- ⭐ Overlay Fade Script -->
 <script>
 function startOverlayCarousel(id) {
     let box = document.getElementById(id);
