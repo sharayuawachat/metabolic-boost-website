@@ -34,16 +34,32 @@
             margin-bottom:15px;
         }
 
-        /* Mission Box */
+        /* ⭐ Enhanced Mission Box */
         .mission-box {
-            background:white;
-            padding:20px;
-            border-radius:10px;
-            box-shadow:0 4px 10px rgba(0,0,0,0.1);
-            margin-bottom:40px;
-            text-align:center;
-            font-size:18px;
-            line-height:1.6;
+            background: linear-gradient(135deg, #e8f5e9, #ffffff);
+            padding: 28px;
+            border-radius: 14px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+            text-align: center;
+            font-size: 19px;
+            line-height: 1.7;
+            border-left: 6px solid #4caf50;
+            position: relative;
+        }
+
+        .mission-box::before {
+            content: "🌿";
+            font-size: 40px;
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border-radius: 50%;
+            padding: 5px 10px;
+            color: #2e7d32;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
         }
 
         /* Product Grid */
@@ -139,11 +155,13 @@
 
     <!-- ⭐ Mission Section -->
     <h2 class="section-title">Our Mission</h2>
+
     <div class="mission-box">
-        At Metabolic Boost, our mission is to provide pure, natural and trustworthy health products
-        that support your wellness journey.  
-        We believe in quality, authenticity, and transparency, ensuring every product is handmade 
-        with care to keep your body healthy, energized, and balanced.
+        At <strong>Metabolic Boost</strong>, our mission is to bring you pure, natural, 
+        and genuinely healthy products made with honesty, care, and traditional recipes.
+        <br><br>
+        We are dedicated to helping individuals live healthier lives through 
+        clean, chemical-free, handcrafted blends that nourish the mind and body.
     </div>
 
     <h2 class="section-title">Our Products</h2>
@@ -164,10 +182,7 @@
         <!-- ⭐ Tea Masala -->
         <div class="card">
             <div class="image-box carousel" id="tea-carousel">
-                <!-- Original main image -->
                 <img src="https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg?auto=compress&cs=tinysrgb&w=600" class="base">
-
-                <!-- Pouch image -->
                 <img src="images/tea-masala-pouch.jpeg" class="top active">
             </div>
 
@@ -179,9 +194,7 @@
         <!-- ⭐ Protein Powder -->
         <div class="card">
             <div class="image-box carousel" id="protein-carousel">
-                <!-- Base image -->
                 <img src="images/protein-powder.jpg" class="base">
-                <!-- Pouch image -->
                 <img src="images/protein-powder-pouch.jpeg" class="top active">
             </div>
 
@@ -219,7 +232,7 @@
     Address: Plot No 288 Jagannath Swami Chowk, Ghass Bazar, Rampeth, Nagpur 440008
 </footer>
 
-<!-- ⭐ Carousel Script -->
+<!-- ⭐ Overlay Fade Script -->
 <script>
 function startOverlayCarousel(id) {
     let box = document.getElementById(id);
@@ -236,4 +249,3 @@ startOverlayCarousel("protein-carousel");
 
 </body>
 </html>
-
