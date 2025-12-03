@@ -28,6 +28,11 @@
             margin: 30px auto;
         }
 
+        h2 {
+            text-align: center;
+            color: #2e7d32;
+        }
+
         .mission-box {
             background: white;
             padding: 20px;
@@ -35,10 +40,8 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             margin-bottom: 40px;
             text-align: center;
-        }
-
-        .mission-box h2 {
-            color: #2e7d32;
+            font-size: 18px;
+            line-height: 1.6;
         }
 
         .product-grid {
@@ -55,24 +58,21 @@
             text-align: center;
         }
 
+        /* Image container */
         .image-box {
             width: 100%;
-            height: 200px;
+            height: 260px; /* Increased height for perfect alignment */
             overflow: hidden;
             border-radius: 10px;
-        }
-
-        /* --- IMAGE CAROUSEL --- */
-        .carousel {
-            width: 100%;
-            height: 100%;
             position: relative;
         }
 
+        /* Carousel images */
         .carousel img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
             position: absolute;
             opacity: 0;
             transition: opacity 1s ease-in-out;
@@ -107,24 +107,21 @@
 
 <body>
 
-<header>
-    Metabolic Boost – Healthy Living Essentials – Healthy Living Products
-</header>
+<header>Metabolic Boost – Healthy Living Essentials – Healthy Living Products</header>
 
 <div class="container">
 
-    <!-- OUR MISSION SECTION -->
+    <!-- ⭐ MISSION SECTION -->
     <div class="mission-box">
         <h2>Our Mission</h2>
         <p>
-            At <strong>Metabolic Boost</strong>, our mission is to provide genuine, healthy, and natural products 
-            that support everyday wellness.  
-            We believe in purity, honesty, and delivering high-quality, homemade blends that help people 
-            live healthier, stronger, and more energetic lives.
+            At <strong>Metabolic Boost</strong>, our mission is to deliver authentic, natural, and chemical-free 
+            health products that enhance your daily well-being. We believe in purity, quality, and 
+            the power of traditional homemade recipes to support a healthier lifestyle.
         </p>
     </div>
 
-    <h2 style="text-align:center; color:#2e7d32;">Our Products</h2>
+    <h2>Our Products</h2>
 
     <div class="product-grid">
 
@@ -138,13 +135,11 @@
             <p class="price">₹1200 / kg</p>
         </div>
 
-        <!-- Tea Masala with image carousel -->
+        <!-- Tea Masala (Carousel) -->
         <div class="card">
-            <div class="image-box">
-                <div class="carousel" id="teaCarousel">
-                    <img src="https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg?auto=compress&cs=tinysrgb&w=600" class="active">
-                    <img src="images/tea-masala-pouch.jpeg">
-                </div>
+            <div class="image-box carousel" id="tea-carousel">
+                <img src="images/tea-masala-pouch.jpeg" class="active">
+                <img src="https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg?auto=compress&cs=tinysrgb&w=600">
             </div>
 
             <h3>Tea Masala</h3>
@@ -152,13 +147,11 @@
             <p class="price">₹2000 / kg<br>₹100 for 50 gram's pouch</p>
         </div>
 
-        <!-- Protein Powder with image carousel -->
+        <!-- Protein Powder (Carousel) -->
         <div class="card">
-            <div class="image-box">
-                <div class="carousel" id="proteinCarousel">
-                    <img src="images/protein-powder.jpg" class="active">
-                    <img src="images/protein-powder-pouch.jpeg">
-                </div>
+            <div class="image-box carousel" id="protein-carousel">
+                <img src="images/protein-powder-pouch.jpeg" class="active">
+                <img src="images/protein-powder.jpg">
             </div>
 
             <h3>Protein Powder</h3>
@@ -179,14 +172,14 @@
     </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
     <strong>Contact Us</strong><br>
     Phone: +91 8999516528, +91 9421785219<br>
 
-    <!-- WhatsApp Button -->
     <a href="https://wa.me/918999516528?text=Hi%2C%20I%20am%20interested%20in%20your%20products" target="_blank" style="text-decoration:none;">
         <button style="margin-top:10px; padding:10px 18px; background:#25D366; color:white; border:none; border-radius:10px; font-weight:bold; cursor:pointer; display:inline-flex; align-items:center; gap:10px; font-size:16px;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="22" height="22" alt="WhatsApp"> WhatsApp Us
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="22"> WhatsApp Us
         </button>
     </a><br><br>
 
@@ -195,20 +188,21 @@
 </footer>
 
 <script>
+/* CAROUSEL SCRIPT */
 function startCarousel(id) {
-    const carousel = document.getElementById(id);
-    const images = carousel.querySelectorAll("img");
+    let box = document.getElementById(id);
+    let images = box.getElementsByTagName("img");
     let index = 0;
 
     setInterval(() => {
         images[index].classList.remove("active");
         index = (index + 1) % images.length;
         images[index].classList.add("active");
-    }, 2000);
+    }, 2500);
 }
 
-startCarousel("teaCarousel");
-startCarousel("proteinCarousel");
+startCarousel("tea-carousel");
+startCarousel("protein-carousel");
 </script>
 
 </body>
