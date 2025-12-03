@@ -28,22 +28,25 @@
             margin: 30px auto;
         }
 
-        h2 {
-            text-align: center;
-            color: #2e7d32;
+        h2.section-title {
+            text-align:center; 
+            color:#2e7d32; 
+            margin-bottom:15px;
         }
 
+        /* Mission Box */
         .mission-box {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
-            text-align: center;
-            font-size: 18px;
-            line-height: 1.6;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom:40px;
+            text-align:center;
+            font-size:18px;
+            line-height:1.6;
         }
 
+        /* Product Grid */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -53,44 +56,52 @@
         .card {
             background: white;
             padding: 15px;
-            border-radius: 10px;
+            border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             text-align: center;
         }
 
-        /* Image container */
         .image-box {
-            width: 100%;
-            height: 260px; /* Increased height for perfect alignment */
-            overflow: hidden;
-            border-radius: 10px;
             position: relative;
+            width: 100%;
+            height: 260px; 
+            border-radius: 10px;
+            overflow: hidden;
         }
 
-        /* Carousel images */
-        .carousel img {
+        /* Base image — always visible */
+        .image-box img.base {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
+        }
+
+        /* Pouch image — fades in/out */
+        .image-box img.top {
             position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
 
-        .carousel img.active {
+        .image-box img.top.active {
             opacity: 1;
         }
 
         .card h3 {
             margin: 15px 0 8px;
             color: #2e7d32;
+            font-size: 22px;
         }
 
         .price {
             font-weight: bold;
             color: #444;
-            margin: 8px 0;
+            margin: 10px 0;
+            font-size: 18px;
         }
 
         footer {
@@ -102,6 +113,21 @@
             font-size: 16px;
             line-height: 1.6;
         }
+
+        button.whatsapp-btn {
+            margin-top:10px;
+            padding:10px 18px;
+            background:#25D366;
+            color:white;
+            border:none;
+            border-radius:10px;
+            font-weight:bold;
+            cursor:pointer;
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+            font-size:16px;
+        }
     </style>
 </head>
 
@@ -111,35 +137,38 @@
 
 <div class="container">
 
-    <!-- ⭐ MISSION SECTION -->
+    <!-- ⭐ Mission Section -->
+    <h2 class="section-title">Our Mission</h2>
     <div class="mission-box">
-        <h2>Our Mission</h2>
-        <p>
-            At <strong>Metabolic Boost</strong>, our mission is to deliver authentic, natural, and chemical-free 
-            health products that enhance your daily well-being. We believe in purity, quality, and 
-            the power of traditional homemade recipes to support a healthier lifestyle.
-        </p>
+        At Metabolic Boost, our mission is to provide **pure, natural and trustworthy health products** 
+        that support your wellness journey.  
+        We believe in **quality, authenticity, and transparency**, ensuring every product is handmade 
+        with care to keep your body healthy, energized, and balanced.
     </div>
 
-    <h2>Our Products</h2>
+    <h2 class="section-title">Our Products</h2>
 
     <div class="product-grid">
 
-        <!-- Dry Fruit Ladoo -->
+        <!-- ⭐ Dry Fruit Ladoo -->
         <div class="card">
             <div class="image-box">
-                <img src="images/dry-fruit-ladoo.jpg" style="width:100%; height:100%; object-fit:cover;">
+                <img src="images/dry-fruit-ladoo.jpg" class="base">
             </div>
+
             <h3>Dry Fruit Ladoo</h3>
             <p>Handmade with premium dry fruits to boost your energy and immunity. 100% natural and healthy.</p>
             <p class="price">₹1200 / kg</p>
         </div>
 
-        <!-- Tea Masala (Carousel) -->
+        <!-- ⭐ Tea Masala -->
         <div class="card">
             <div class="image-box carousel" id="tea-carousel">
-                <img src="images/tea-masala-pouch.jpeg" class="active">
-                <img src="https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg?auto=compress&cs=tinysrgb&w=600">
+                <!-- Original main image -->
+                <img src="https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg?auto=compress&cs=tinysrgb&w=600" class="base">
+
+                <!-- Pouch image -->
+                <img src="images/tea-masala-pouch.jpeg" class="top active">
             </div>
 
             <h3>Tea Masala</h3>
@@ -147,11 +176,13 @@
             <p class="price">₹2000 / kg<br>₹100 for 50 gram's pouch</p>
         </div>
 
-        <!-- Protein Powder (Carousel) -->
+        <!-- ⭐ Protein Powder -->
         <div class="card">
             <div class="image-box carousel" id="protein-carousel">
-                <img src="images/protein-powder-pouch.jpeg" class="active">
-                <img src="images/protein-powder.jpg">
+                <!-- Base image -->
+                <img src="images/protein-powder.jpg" class="base">
+                <!-- Pouch image -->
+                <img src="images/protein-powder-pouch.jpeg" class="top active">
             </div>
 
             <h3>Protein Powder</h3>
@@ -159,11 +190,12 @@
             <p class="price">₹1500 / kg<br>₹150 for 100 gram's pouch</p>
         </div>
 
-        <!-- Detox Powder -->
+        <!-- ⭐ Detox Powder -->
         <div class="card">
             <div class="image-box">
-                <img src="images/detox-powder.jpg" style="width:100%; height:100%; object-fit:cover;">
+                <img src="images/detox-powder.jpg" class="base">
             </div>
+
             <h3>Detox Powder</h3>
             <p>Natural detox blend to cleanse your system, improve digestion, and boost overall health.</p>
             <p class="price">₹1000 / kg</p>
@@ -172,14 +204,14 @@
     </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
     <strong>Contact Us</strong><br>
     Phone: +91 8999516528, +91 9421785219<br>
 
-    <a href="https://wa.me/918999516528?text=Hi%2C%20I%20am%20interested%20in%20your%20products" target="_blank" style="text-decoration:none;">
-        <button style="margin-top:10px; padding:10px 18px; background:#25D366; color:white; border:none; border-radius:10px; font-weight:bold; cursor:pointer; display:inline-flex; align-items:center; gap:10px; font-size:16px;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="22"> WhatsApp Us
+    <a href="https://wa.me/918999516528?text=Hi%2C%20I%20am%20interested%20in%20your%20products" target="_blank">
+        <button class="whatsapp-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="22" height="22">
+            WhatsApp Us
         </button>
     </a><br><br>
 
@@ -187,22 +219,19 @@
     Address: Plot No 288 Jagannath Swami Chowk, Ghass Bazar, Rampeth, Nagpur 440008
 </footer>
 
+<!-- ⭐ Carousel Script -->
 <script>
-/* CAROUSEL SCRIPT */
-function startCarousel(id) {
+function startOverlayCarousel(id) {
     let box = document.getElementById(id);
-    let images = box.getElementsByTagName("img");
-    let index = 0;
+    let topImg = box.querySelector("img.top");
 
     setInterval(() => {
-        images[index].classList.remove("active");
-        index = (index + 1) % images.length;
-        images[index].classList.add("active");
+        topImg.classList.toggle("active");
     }, 2500);
 }
 
-startCarousel("tea-carousel");
-startCarousel("protein-carousel");
+startOverlayCarousel("tea-carousel");
+startOverlayCarousel("protein-carousel");
 </script>
 
 </body>
