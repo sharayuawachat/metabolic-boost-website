@@ -28,26 +28,19 @@
             margin: 30px auto;
         }
 
-        /* Mission Section */
-        .mission {
+        .mission-box {
             background: white;
-            padding: 25px;
+            padding: 20px;
             border-radius: 10px;
-            text-align: center;
-            margin-bottom: 40px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .mission h2 {
-            color: #2e7d32;
-            margin-bottom: 10px;
-        }
-        .mission p {
-            font-size: 17px;
-            line-height: 1.6;
-            color: #444;
+            margin-bottom: 40px;
+            text-align: center;
         }
 
-        /* Product Grid */
+        .mission-box h2 {
+            color: #2e7d32;
+        }
+
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -62,29 +55,18 @@
             text-align: center;
         }
 
-        /* UNIFORM IMAGE BOX FOR PERFECT ALIGNMENT */
         .image-box {
             width: 100%;
-            height: 220px;
-            position: relative;
+            height: 200px;
             overflow: hidden;
             border-radius: 10px;
         }
 
-        .image-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        /* Carousel styling */
+        /* --- IMAGE CAROUSEL --- */
         .carousel {
             width: 100%;
-            height: 220px;
+            height: 100%;
             position: relative;
-            border-radius: 10px;
-            overflow: hidden;
         }
 
         .carousel img {
@@ -120,38 +102,25 @@
             font-size: 16px;
             line-height: 1.6;
         }
-
-        footer button {
-            margin-top: 10px;
-            padding: 10px 18px;
-            background: #25D366;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-weight: bold;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 16px;
-        }
     </style>
 </head>
 
 <body>
 
-<header>Metabolic Boost – Healthy Living Essentials – Healthy Living Products</header>
+<header>
+    Metabolic Boost – Healthy Living Essentials – Healthy Living Products
+</header>
 
 <div class="container">
 
-    <!-- ⭐ MISSION SECTION -->
-    <div class="mission">
+    <!-- OUR MISSION SECTION -->
+    <div class="mission-box">
         <h2>Our Mission</h2>
         <p>
-            At Metabolic Boost, our mission is to provide pure, wholesome, and genuinely healthy products 
-            that support your daily wellness journey.  
-            We believe in delivering natural, handmade blends crafted with care—ensuring that every product 
-            brings you closer to a healthier, more energetic lifestyle.
+            At <strong>Metabolic Boost</strong>, our mission is to provide genuine, healthy, and natural products 
+            that support everyday wellness.  
+            We believe in purity, honesty, and delivering high-quality, homemade blends that help people 
+            live healthier, stronger, and more energetic lives.
         </p>
     </div>
 
@@ -162,27 +131,28 @@
         <!-- Dry Fruit Ladoo -->
         <div class="card">
             <div class="image-box">
-                <img src="images/dry-fruit-ladoo.jpg" alt="Dry Fruit Ladoo">
+                <img src="images/dry-fruit-ladoo.jpg" style="width:100%; height:100%; object-fit:cover;">
             </div>
             <h3>Dry Fruit Ladoo</h3>
             <p>Handmade with premium dry fruits to boost your energy and immunity. 100% natural and healthy.</p>
             <p class="price">₹1200 / kg</p>
         </div>
 
-        <!-- Tea Masala (Carousel) -->
+        <!-- Tea Masala with image carousel -->
         <div class="card">
             <div class="image-box">
                 <div class="carousel" id="teaCarousel">
-                    <img src="images/tea-masala-pouch.jpeg" class="active">
-                    <img src="https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg?auto=compress&cs=tinysrgb&w=600">
+                    <img src="https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg?auto=compress&cs=tinysrgb&w=600" class="active">
+                    <img src="images/tea-masala-pouch.jpeg">
                 </div>
             </div>
+
             <h3>Tea Masala</h3>
             <p>Authentic blend of aromatic spices to enhance your tea experience and boost metabolism.</p>
             <p class="price">₹2000 / kg<br>₹100 for 50 gram's pouch</p>
         </div>
 
-        <!-- Protein Powder (Carousel) -->
+        <!-- Protein Powder with image carousel -->
         <div class="card">
             <div class="image-box">
                 <div class="carousel" id="proteinCarousel">
@@ -190,6 +160,7 @@
                     <img src="images/protein-powder-pouch.jpeg">
                 </div>
             </div>
+
             <h3>Protein Powder</h3>
             <p>Homemade natural protein blend perfect for fitness, strength, and daily nutrition.</p>
             <p class="price">₹1500 / kg<br>₹150 for 100 gram's pouch</p>
@@ -198,7 +169,7 @@
         <!-- Detox Powder -->
         <div class="card">
             <div class="image-box">
-                <img src="images/detox-powder.jpg" alt="Detox Powder">
+                <img src="images/detox-powder.jpg" style="width:100%; height:100%; object-fit:cover;">
             </div>
             <h3>Detox Powder</h3>
             <p>Natural detox blend to cleanse your system, improve digestion, and boost overall health.</p>
@@ -208,24 +179,21 @@
     </div>
 </div>
 
-<!-- Footer -->
 <footer>
     <strong>Contact Us</strong><br>
-    Phone: +91 8999516528, +91 9421785219<br><br>
+    Phone: +91 8999516528, +91 9421785219<br>
 
+    <!-- WhatsApp Button -->
     <a href="https://wa.me/918999516528?text=Hi%2C%20I%20am%20interested%20in%20your%20products" target="_blank" style="text-decoration:none;">
-        <button>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="22" height="22">
-            WhatsApp Us
+        <button style="margin-top:10px; padding:10px 18px; background:#25D366; color:white; border:none; border-radius:10px; font-weight:bold; cursor:pointer; display:inline-flex; align-items:center; gap:10px; font-size:16px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="22" height="22" alt="WhatsApp"> WhatsApp Us
         </button>
-    </a>
-    <br><br>
+    </a><br><br>
 
     Email: awachatsharayu.sa@gmail.com<br>
     Address: Plot No 288 Jagannath Swami Chowk, Ghass Bazar, Rampeth, Nagpur 440008
 </footer>
 
-<!-- CAROUSEL SCRIPT -->
 <script>
 function startCarousel(id) {
     const carousel = document.getElementById(id);
