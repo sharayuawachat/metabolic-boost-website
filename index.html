@@ -24,6 +24,25 @@
             max-width: 1200px;
             margin: 30px auto;
         }
+
+        /* Mission Section */
+        .mission-box {
+            background: #e8f5e9;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .mission-box h2 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .mission-box p {
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -42,15 +61,31 @@
             object-fit: cover;
             border-radius: 10px;
         }
-        .card h3 {
-            margin: 15px 0 8px;
-            color: #2e7d32;
+
+        /* Carousel for pouch images */
+        .carousel {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-top: 10px;
+            position: relative;
         }
-        .price {
-            font-weight: bold;
-            color: #444;
-            margin: 8px 0;
+        .carousel img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            position: absolute;
+            animation: slide 6s infinite;
         }
+        @keyframes slide {
+            0% {opacity: 1;}
+            45% {opacity: 1;}
+            50% {opacity: 0;}
+            95% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+
         footer {
             background: #2e7d32;
             color: white;
@@ -63,52 +98,61 @@
     </style>
 </head>
 <body>
-    <header>Metabolic Boost – Healthy Living Essentials – Healthy Living Products</header>
+    <header>Metabolic Boost – Healthy Living Essentials</header>
 
     <div class="container">
+
+        <!-- ⭐ MISSION SECTION -->
+        <div class="mission-box">
+            <h2>Our Mission</h2>
+            <p>
+                At <strong>Metabolic Boost</strong>, our mission is to deliver pure, genuine,
+                and health-focused products made with the highest quality ingredients.  
+                We believe in promoting natural wellness by offering wholesome,
+                chemical-free items that support daily nutrition, immunity, and overall well-being.  
+                Your health is our priority, and we aim to bring you products that are honest, safe, and made with care.
+            </p>
+        </div>
+
         <h2 style="text-align:center; color:#2e7d32;">Our Products</h2>
         <div class="product-grid">
 
             <!-- Dry Fruit Ladoo -->
             <div class="card">
-              <img src="images/dry-fruit-ladoo.jpg" alt="Dry Fruit Ladoo">
-
+                <img src="images/dry-fruit-ladoo.jpg" alt="Dry Fruit Ladoo">
                 <h3>Dry Fruit Ladoo</h3>
                 <p>Handmade with premium dry fruits to boost your energy and immunity. 100% natural and healthy.</p>
                 <p class="price">₹1200 / kg</p>
-                
             </div>
 
             <!-- Tea Masala -->
             <div class="card">
-                <img src="https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Tea Masala">
-
+                <img src="images/tea-masala-pouch.jpg" alt="Tea Masala Pouch">
+                <div class="carousel">
+                    <img src="images/tea-masala-pouch.jpg">
+                </div>
                 <h3>Tea Masala</h3>
                 <p>Authentic blend of aromatic spices to enhance your tea experience and boost metabolism.</p>
-                <p class="price">₹2000 / kg<br>₹100 for 50 gram's pouch
-                <br>
-                </p>
+                <p class="price">₹2000 / kg<br>₹100 for 50 gram's pouch</p>
             </div>
 
             <!-- Protein Powder -->
             <div class="card">
-               <img src="images/protein-powder.jpg" alt="Protein Powder">
-
+                <img src="images/protein-powder.jpg" alt="Protein Powder">
+                <div class="carousel">
+                    <img src="images/protein-powder-pouch.jpg">
+                </div>
                 <h3>Protein Powder</h3>
                 <p>Homemade natural protein blend perfect for fitness, strength, and daily nutrition.</p>
-                <p class="price">₹1500 / kg<br>₹150 for 100 gram's pouch
-                <br>
-                </p>
+                <p class="price">₹1500 / kg<br>₹150 for 100 gram's pouch</p>
             </div>
 
             <!-- Detox Powder -->
             <div class="card">
-             <img src="images/detox-powder.jpg" alt="Detox Powder">
+                <img src="images/detox-powder.jpg" alt="Detox Powder">
                 <h3>Detox Powder</h3>
                 <p>Natural detox blend to cleanse your system, improve digestion, and boost overall health.</p>
                 <p class="price">₹1000 / kg</p>
-                
-                
             </div>
 
         </div>
@@ -118,17 +162,15 @@
         <strong>Contact Us</strong><br>
         Phone: +91 8999516528, +91 9421785219<br>
 
-<!-- WhatsApp Contact Button -->
-<a href="https://wa.me/918999516528?text=Hi%2C%20I%20am%20interested%20in%20your%20products" target="_blank" style="text-decoration:none;">
-    <button style="margin-top:10px; padding:10px 18px; background:#25D366; color:white; border:none; border-radius:10px; font-weight:bold; cursor:pointer; display:inline-flex; align-items:center; gap:10px; font-size:16px;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="22" height="22" alt="WhatsApp"> WhatsApp Us
-    </button>
-</a><br><br>
+        <a href="https://wa.me/918999516528?text=Hi%2C%20I%20am%20interested%20in%20your%20products" target="_blank" style="text-decoration:none;">
+            <button style="margin-top:10px; padding:10px 18px; background:#25D366; color:white; border:none; border-radius:10px; font-weight:bold; cursor:pointer; display:inline-flex; align-items:center; gap:10px; font-size:16px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="22" height="22" alt="WhatsApp"> WhatsApp Us
+            </button>
+        </a><br><br>
+
         Email: awachatsharayu.sa@gmail.com<br>
         Address: Plot No 288 Jagannath Swami Chowk, Ghass Bazar, Rampeth, Nagpur 440008
     </footer>
+
 </body>
 </html>
-
-
-
